@@ -49,21 +49,28 @@ This project is currently build based on these projects:
 # Platform IO setup
 
 ## Steps:
-
-1- add the github repository in lib_deps
-2- build_flags to use gnu++17 
-3- allow more space for program by using min_spiffs.csv
+* add the github repository in lib_deps.
+* build_flags to use gnu++17
+* allow more space for program by using min_spiffs.csv
 
 ## platformio.ini file example:
 
 [env:esp32doit-devkit-v1]
+
 platform = espressif32
+
 board = esp32doit-devkit-v1
+
 framework = arduino
+
 build_unflags = -std=gnu++11
+
 build_flags = -std=gnu++17
+
 board_build.partitions = min_spiffs.csv
+
 lib_deps =
     https://github.com/jakubdybczak/esp32-arduino-matter.git
     
+
 monitor_speed=115200
