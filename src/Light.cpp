@@ -19,7 +19,7 @@ using namespace esp_matter::endpoint;
 
 // Please configure your PINs
 const int LED_PIN = 2;
-const int TOGGLE_BUTTON_PIN = 0;
+const int TOGGLE_BUTTON_PIN = 15;
 
 // Debounce for toggle button
 const int DEBOUNCE_DELAY = 500;
@@ -59,7 +59,7 @@ static esp_err_t on_attribute_update(attribute::callback_type_t type, uint16_t e
 void setup() {
   Serial.begin(115200);
   pinMode(LED_PIN, OUTPUT);
-  pinMode(TOGGLE_BUTTON_PIN, INPUT);
+  pinMode(TOGGLE_BUTTON_PIN, INPUT_PULLUP);
 
   // Enable debug logging
   esp_log_level_set("*", ESP_LOG_DEBUG);
